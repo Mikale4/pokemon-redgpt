@@ -1,0 +1,15 @@
+# Installed, not authored. `tools/generate-data.js` is the only file that touches
+# @pkmn, and the packaged output in data/ is committed — so a clone can play the
+# game without npm install. Run `npm install` only to rebuild data or run tests.
+node_modules/
+
+# Session scratch: probe scripts and tier snapshots. Useful while working, not
+# part of the project.
+scratchpad/
+
+__pycache__/
+*.pyc
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db

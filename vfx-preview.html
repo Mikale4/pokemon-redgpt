@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RedGPT field VFX preview</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { padding: 1rem; font-family: system-ui, sans-serif; }
+  .row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .stage {
+    position: relative; height: 260px; border-radius: 10px; overflow: hidden;
+    background: linear-gradient(to bottom, #7fb8e0 0%, #a8d8b0 58%, #6faa74 100%);
+  }
+  .stage h3 {
+    position: absolute; z-index: 5; margin: 0; left: .6rem; top: .4rem;
+    color: #fff; text-shadow: 0 1px 3px #000; font-size: .95rem;
+  }
+  .ground { position: absolute; inset: auto 0 0 0; height: 38%; background: rgba(60,120,70,.5); }
+  .puck {
+    position: absolute; z-index: 3; bottom: 16%; left: 22%; width: 74px; height: 30px;
+    border-radius: 50%; background: rgba(0,0,0,.22);
+  }
+  .puck.b { left: auto; right: 22%; bottom: 46%; width: 56px; height: 22px; }
+</style>
+</head>
+<body>
+<h2>Field VFX preview</h2>
+<div class="row2">
+  <div class="stage"><h3>Sandstorm</h3><div class="ground"></div><div class="puck"></div><div class="puck b"></div>
+    <div class="weather-layer wx-sandstorm"></div></div>
+  <div class="stage"><h3>Electric Terrain</h3><div class="ground"></div><div class="puck"></div><div class="puck b"></div>
+    <div class="terrain-layer tr-electric"></div></div>
+  <div class="stage"><h3>Rain (unchanged, for comparison)</h3><div class="ground"></div><div class="puck"></div>
+    <div class="weather-layer wx-rain"></div></div>
+  <div class="stage"><h3>Grassy Terrain (unchanged)</h3><div class="ground"></div><div class="puck"></div>
+    <div class="terrain-layer tr-grassy"></div></div>
+</div>
+</body>
+</html>

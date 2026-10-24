@@ -1,0 +1,25 @@
+{
+  "name": "pokemon-redgpt",
+  "version": "2.0.0",
+  "description": "Pokémon RedGPT — a competitive Pokémon battle sandbox with an optional roguelite Campaign, built on generated Generation 9 battle data.",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "build:data": "node tools/generate-data.js",
+    "test": "npm run test:data && npm run test:engine && npm run test:coverage && npm run test:teams && npm run test:arena && npm run test:campaign && npm run test:ui",
+    "test:data": "node tests/data-validation.js",
+    "test:engine": "node tests/engine-battle.js",
+    "test:coverage": "node tests/move-coverage.js",
+    "test:teams": "node tests/teams.js",
+    "test:arena": "node tests/arena.js",
+    "test:campaign": "node tests/campaign.js",
+    "test:ui": "node tests/ui-smoke.js"
+  },
+  "dependencies": {
+    "@pkmn/data": "^0.10.11",
+    "@pkmn/dex": "^0.10.11"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
+}

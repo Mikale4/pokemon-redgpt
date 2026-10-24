@@ -1,0 +1,13 @@
+# Line endings are PER FILE in this project and the difference is load-bearing:
+# PROJECT_CONTEXT §8 records that `tests/data-validation.js` and
+# `tools/generate-data.js` are CRLF while most of `src/**` and
+# `tests/engine-battle.js` are LF, and that a scripted multi-line patch which
+# guesses wrong silently matches nothing — which has cost real time twice, once
+# in bash and once in Python.
+#
+# `core.autocrlf` is true on the authoring machine, so without this git would
+# store everything as LF and check it back out as CRLF on Windows / LF on macOS,
+# flattening the distinction the docs tell the next person to rely on.
+#
+# `-text` means: never convert, in either direction. Bytes round-trip exactly.
+* -text

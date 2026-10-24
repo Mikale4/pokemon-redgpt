@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "redgpt",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["run_game.py", "8123", "--no-browser"],
+      "port": 8123
+    },
+    {
+      "//": "Scratch instance for agent UI verification. A different port is a different origin, so it has its own empty localStorage and cannot touch the player's save.",
+      "name": "redgpt-scratch",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["run_game.py", "8124", "--no-browser"],
+      "port": 8124
+    }
+  ]
+}
